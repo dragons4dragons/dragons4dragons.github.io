@@ -1,7 +1,7 @@
 <?php
 define('DB_NAME','dragons4dragons');
-define('DB_USER','root');
-define('DB_PASSWORD','');
+define('DB_USER','BlueStarBurst');
+define('DB_PASSWORD','buddy2012');
 define('DB_HOST','localhost');
 
 function sqlConnect(){
