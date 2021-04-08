@@ -45,7 +45,7 @@
         <img src="img/shirt.png">
         <div class="txt">
             <h1> Buy a Dragons4Dragons Shirt! </h1>
-            <p> All proceeds go to the Dragons4Dragons scholarship fund for students. <br> Click <a href="https://www.etsy.com/listing/777793712/dragons-4-dragons?ref=listing_published_alert" target="_blank">here</a> to learn more </p>
+            <p> All proceeds go to the Dragons4Dragons scholarship fund for students. <br> Click <a href="https://www.etsy.com/listing/982790168/dragons-4-dragons-mens-short-sleeved-100?ref=listing_published_alert&variation0=1921849126" target="_blank">here</a> to learn more </p>
         </div>
     </div>
     <!--
