@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "server": "http-server /docs"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "node": "^15.4.0",
+    "path": "^0.12.7",
+    "http-server": "^0.12.3"
+  }
+}
