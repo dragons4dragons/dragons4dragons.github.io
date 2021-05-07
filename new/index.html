@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dragons4Dragons</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="root">
+        <div class="header" id="header">
+            <h1>about</h1>
+            <h1>pics</h1>
+            <h1>members</h1>
+            <h1>sponsors</h1>
+            <h1>more!</h1>
+        </div>
+        <div id="bg">
+        </div>
+        <div id="back">
+            <div id="content">
+                D R A G O N S 4 D R A G O N S
+            </div>
+        </div>
+        <div class="cover">
+            <div class="title l">
+                <h1>ABOUT</h1>
+            </div>
+            <div class="desc r">This program was created for students to support each other by raising funds for college
+                scholarships through the sale of merchandise, donations, and sponsorships. It is the hope that enough
+                money will be raised each year to give out several awards to those students who have demonstrated the
+                true meaning of being a Southlake Carroll Dragon.</div>
+        </div>
+        <div id="bg2">
+        </div>
+    </div>
+</body>
+
+</html>
+
+<style>
+    html {
+        overflow-x: hidden;
+    }
+
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        left: 0;
+    }
+
+    .header {
+        position: fixed;
+        display: none;
+        width: 98%;
+        height: 75px;
+        margin: 0;
+        left: 0;
+        top: 0;
+        background-color: white;
+        justify-content: flex-end;
+        z-index: 1;
+        padding-right: 2%;
+    }
+
+    .header h1 {
+        font-size: large;
+        margin: auto 1%;
+        max-width: min-content;
+    }
+
+    .header h1:hover {
+        cursor: pointer;
+    }
+
+    #bg {
+        display: block;
+        overflow-x: hidden;
+        width: 105vw;
+        transform: translate(0, 0);
+        z-index: -1;
+        height: 105vh;
+        background-image: url("img2/school.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        filter: saturate(200%) blur(10px);
+    }
+
+    #bg2 {
+        position: inherit;
+        margin-top: 0;
+        overflow-x: hidden;
+        width: 105vw;
+        transform: translate(0, -7.5vh);
+        z-index: -10;
+        height: 105vh;
+        background-image: url("img2/school.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        filter: saturate(200%) blur(10px);
+    }
+
+    .slideDown {
+        opacity: 1;
+        animation: slideDown 1s;
+    }
+
+    .slideUp {
+        animation: slideUp 1s;
+        transform: translateY(-100%);
+    }
+
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-100%);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideUp {
+        0% {
+            transform: translateY(0);
+        }
+
+        100% {
+            transform: translateY(-100%);
+        }
+    }
+
+    #back {
+        position: absolute;
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
+        margin: 0;
+    }
+
+    #content {
+        font-family: 'Roboto', sans-serif;
+        font-size: 300%;
+        word-spacing: 10px;
+        height: min-content;
+        background-image: linear-gradient();
+        color: white;
+        background-color: rgb(80, 80, 80);
+        text-align: center;
+        margin: auto;
+        padding: 1%;
+    }
+
+    .root {
+        width: 100vw;
+        left: 0;
+        top: 0;
+        margin: 0;
+        background-color: transparent;
+        position: absolute;
+    }
+
+    .cover {
+        display: flex;
+        transform: translateY(-5vh);
+        width: 100vw;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        min-height: 200px;
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+        color: rgb(41, 41, 41);
+        z-index: 2;
+    }
+
+    .cover div {
+        margin-top: auto;
+        margin-bottom: auto;
+        height: auto;
+        padding: 1% 3% 1% 3%;
+    }
+
+    .cover h1 {
+        font-size: 300%;
+        width: 100%;
+    }
+
+    .l {
+        margin-left: auto;
+        text-align: right;
+        border-right: solid black 3px;
+        width: 15%;
+    }
+
+    .r {
+        font-size: 150%;
+        margin-right: auto;
+        width: 50%;
+        height: 1%;
+        min-width: 200px;
+        text-overflow: clip;
+        overflow: hidden;
+        background-color: white;
+        animation: expands 3s;
+    }
+
+    @keyframes expands {
+        0% {
+            height: 0;
+            opacity: 0;
+        }
+
+        100% {
+            height: 30%;
+            opacity: 1;
+        }
+    }
+</style>
+
+<script>
+
+
+
+    document.getElementById("header").style.display = "inline-flex";
+    document.getElementById("header").classList.add("slideDown");
+    //document.getElementById("header").style.display = "none";
+
+
+    function check(e) {
+        if (e.clientY < 80 || window.scrollY == 0) {
+            document.getElementById("header").classList.remove("slideUp");
+            document.getElementById("header").style.display = "inline-flex";
+            document.getElementById("header").classList.add("slideDown");
+        } else {
+            document.getElementById("header").classList.remove("slideDown");
+            document.getElementById("header").classList.add("slideUp");
+        }
+
+        mobile();
+    }
+
+    document.onmousemove = (e) => {
+        check(e);
+    }
+
+    window.onscroll = (e) => {
+        check(e);
+        window.scroll({
+            left: 0
+        });
+        console.log(e);
+    }
+
+    window.scroll({
+        left: 0
+    });
+
+    function mobile() {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            console.log(navigator.userAgent);
+            document.getElementById("back").style.height = "500px";
+            document.getElementById("bg").style.height = "500px";
+        } else {
+
+        }
+    }
+
+    mobile();
+
+</script>
