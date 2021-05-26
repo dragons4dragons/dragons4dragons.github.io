@@ -1,11 +1,14 @@
-// imports ^w^
-const express = require("express");
-const http = require("http");
-var path = require('path');
+const express = require('express');
+const app = new express();
 
-// redirect to https :/
-http.createServer(function (req, res) {
-  res.sendFile(path.join(__dirname, '..') + '/docs/index.html');
-  //res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
-  res.end();
-}).listen(80);
+var location = 'new';
+
+app.get('/', function(request, response){
+    response.sendFile(__dirname + '/' + location + '/index.html');
+});
+
+app.use(express.static(location))
+
+app.listen(3000, () => {
+  console.log("server running!");
+})

@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "server": "http-server /docs"
+    "server": "http-server /docs",
+    "start": "node server.js"
   },
   "devDependencies": {
     "express": "^4.17.1",
