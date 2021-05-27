@@ -9,28 +9,32 @@
 
 <body>
     <div class="root">
-        <div class="header" id="header">
-            <h1>about</h1>
-            <h1>pics</h1>
-            <h1>members</h1>
-            <h1>sponsors</h1>
-            <h1>more!</h1>
+        <div class="header headerTap" id="header">
+            <h1 class="headerTap" onclick="scrollToSetPos(1)">about</h1>
+            <h1 class="headerTap">pics</h1>
+            <h1 class="headerTap">members</h1>
+            <h1 class="headerTap">sponsors</h1>
+            <h1 class="headerTap">more!</h1>
         </div>
         <div id="bg">
+            <div class="blur">
+            </div>
         </div>
         <div id="back">
             <div id="content">
                 D R A G O N S 4 D R A G O N S
             </div>
         </div>
-        <div class="cover">
-            <div class="title l">
-                <h1>ABOUT</h1>
+        <div class="cover" id="cover1">
+            <div class="title t">
+                <h1 class="h1">ABOUT</h1>
             </div>
-            <div class="desc r">This program was created for students to support each other by raising funds for college
+            <div class="desc b p" id="desc1"><p>This program was created for students to support each other by raising
+                funds for
+                college
                 scholarships through the sale of merchandise, donations, and sponsorships. It is the hope that enough
                 money will be raised each year to give out several awards to those students who have demonstrated the
-                true meaning of being a Southlake Carroll Dragon.</div>
+                true meaning of being a Southlake Carroll Dragon.</p></div>
         </div>
         <div id="bg2">
         </div>
@@ -86,7 +90,18 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: bottom;
-        filter: saturate(200%) blur(10px);
+        filter: saturate(150%)
+    }
+
+    .blur {
+        width: 100%;
+        height: 100%;
+        background-image: url("img2/school.jpg");
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        filter: saturate(150%) blur(10px);
     }
 
     #bg2 {
@@ -97,7 +112,7 @@
         transform: translate(0, -7.5vh);
         z-index: -10;
         height: 105vh;
-        background-image: url("img2/school.jpg");
+        background-image: url("img2/school2.jpg");
         background-attachment: fixed;
         background-size: cover;
         background-repeat: no-repeat;
@@ -139,7 +154,7 @@
         position: absolute;
         display: flex;
         width: 100vw;
-        height: 100vh;
+        height: 105vh;
         left: 0;
         top: 0;
         margin: 0;
@@ -173,47 +188,40 @@
     }
 
     .cover {
-        display: flex;
-        transform: translateY(-5vh);
-        width: 100vw;
-        padding-top: 3vh;
-        padding-bottom: 3vh;
-        min-height: 200px;
+        height: min-content;
+        background-color: white;
         font-family: 'Roboto', sans-serif;
-        background-color: white;
-        color: rgb(41, 41, 41);
-        z-index: 2;
+        display: block;
+        width: 100vw;
+        margin: auto;
+        padding: 50px 0;
     }
 
-    .cover div {
-        margin-top: auto;
-        margin-bottom: auto;
-        height: auto;
-        padding: 1% 3% 1% 3%;
-    }
-
-    .cover h1 {
-        font-size: 300%;
-        width: 100%;
-    }
-
-    .l {
-        margin-left: auto;
-        text-align: right;
-        border-right: solid black 3px;
-        width: 15%;
-    }
-
-    .r {
-        font-size: 150%;
-        margin-right: auto;
-        width: 50%;
-        height: 1%;
-        min-width: 200px;
-        text-overflow: clip;
+    .t {
+        margin: auto;
+        text-align: center;
+        width: min-content;
+        border-bottom: black 3px solid;
         overflow: hidden;
-        background-color: white;
-        animation: expands 3s;
+    }
+
+    .t h1 {
+        margin: 0 auto;
+        padding: 0vh 50px 3vh;
+        animation: openUp 2s;
+    }
+
+    .b {
+        margin: 0 auto auto;
+        padding-top: 3vh;
+        text-align: center;
+        width: auto;
+        max-width: 700px;
+        overflow: hidden;
+    }
+
+    .b p {
+        animation: openDown 2s;
     }
 
     @keyframes expands {
@@ -225,6 +233,28 @@
         100% {
             height: 30%;
             opacity: 1;
+        }
+    }
+
+    @keyframes openDown {
+        0% {
+            transform: translateY(-150%);
+            opacity: 0;
+        } 
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes openUp {
+        0% {
+            transform: translateY(150%);
+            opacity: 0;
+        } 
+        100% {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 </style>
@@ -278,22 +308,15 @@
 
 
 
-
-
-
-
-
-
-
-
-
     document.getElementById("header").style.display = "inline-flex";
     document.getElementById("header").classList.add("slideDown");
     //document.getElementById("header").style.display = "none";
 
     var isMobile = false;
     var toggle = true;
-    function check(e) {
+
+    var mouseY = 0;
+    function check() {
 
         mobile();
 
@@ -301,7 +324,7 @@
             return;
         }
 
-        if (e.clientY < 80 || window.scrollY == 0 || (up && isMobile)) {
+        if (mouseY < 80 || (window.scrollY == 0 || pos == 0) || (up && isMobile)) {
             toggle = true;
             document.getElementById("header").classList.remove("slideUp");
             document.getElementById("header").style.display = "inline-flex";
@@ -314,28 +337,61 @@
     }
 
     document.onmousemove = (e) => {
-        check(e);
+        mouseY = e.clientY;
+        check();
     }
 
     var lastScrollTop = 0;
     var up = false;
 
     var pos = 0;
-    var spots = [1, 50, 100]
+
+
+
+
+
+    //positions
+    var spots = [0, document.getElementById("cover1")]
+    var hash = ['home', 'about']
+
+    timeout = ''
+
+    function scrollToPos() {
+        //window.location.hash = hash[pos];
+        if (pos == 0) {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        } else {
+            var height = (innerHeight - spots[pos].style.height) / 2;
+            window.scrollTo({
+                top: spots[pos].offsetTop - height / 2,
+                behavior: 'smooth'
+            })
+        }
+
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+            check();
+        }, 100);
+
+    }
+
+
+
+
     var scrolling = false;
     var static = true;
     var staticVal = 0;
 
     window.scroll({
-        top: 0,
         left: 0
     });
 
 
     function tempScroll(event) {
         event.preventDefault();
-
-        console.log(event);
 
         if (event.deltaY < 0) {
             up = true;
@@ -344,10 +400,8 @@
         }
 
         adjustPos();
-        window.scrollTo({
-            top: Math.round((spots[pos] / 100) * window.innerHeight),
-            behavior: 'smooth'
-        })
+        scrollToPos();
+
         staticVal = 0;
         static = true;
     }
@@ -380,7 +434,7 @@
             up = true;
         } else if (deltaY < -60) {
             up = false;
-        } else {
+        } else if (!e.target.classList.contains("headerTap")) {
             if (!toggle) {
                 toggle = true;
                 document.getElementById("header").classList.remove("slideUp");
@@ -392,13 +446,13 @@
                 document.getElementById("header").classList.add("slideUp");
             }
             return;
+        } else {
+            return;
         }
 
         adjustPos();
-        window.scrollTo({
-            top: Math.round((spots[pos] / 100) * window.innerHeight),
-            behavior: 'smooth'
-        })
+        scrollToPos();
+
 
     }, false);
 
@@ -416,6 +470,7 @@
                 pos = spots.length - 1;
             }
         }
+        check();
 
     }
 
@@ -424,17 +479,52 @@
     function mobile() {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             isMobile = true;
-            console.log(navigator.userAgent);
-            document.getElementById("back").style.height = "95vh";
-            document.getElementById("bg").style.height = "95vh";
+            //console.log(navigator.userAgent);
             document.getElementById("header").style.height = "10vh";
             document.getElementById("header").style.fontSize = 'larger';
+            document.getElementById("content").style.fontSize = '360%';
             document.getElementById("content").style.width = 'min-content';
-        } else {
+
+            var titles = document.getElementsByClassName("h1")
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].style.fontSize = "10vw"
+            }
+            titles = document.getElementsByClassName("p")
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].style.fontSize = "5vw"
+            }
+
+            document.getElementById("cover1").style.width = "105vw";
+            document.getElementById("cover1").style.padding = "10vw 0";
+            document.getElementById("desc1").style.maxWidth = "80vw";
+            return;
+        }
+        else if (window.innerHeight > window.innerWidth) {
             isMobile = false;
+            document.getElementById("content").style.fontSize = '30px';
+            document.getElementById("header").style.fontSize = '60%';
+            document.getElementById("content").style.width = 'min-content';
+        }
+        else {
+            isMobile = false;
+            document.getElementById("content").style.fontSize = '40px';
             document.getElementById("content").style.width = 'max-content';
             document.getElementById("header").style.fontSize = '60%';
         }
+
+        var titles = document.getElementsByClassName("h1")
+        for (var i = 0; i < titles.length; i++) {
+            titles[i].style.fontSize = "45px"
+        }
+        titles = document.getElementsByClassName("p")
+        for (var i = 0; i < titles.length; i++) {
+            titles[i].style.fontSize = "28px"
+        }
+
+        document.getElementById("cover1").style.width = "100vw";
+        document.getElementById("cover1").style.padding = "75px 0";
+        document.getElementById("desc1").style.maxWidth = "750px";
+
     }
 
     mobile();
@@ -467,13 +557,20 @@
 
 
             adjustPos();
-            window.scrollTo({
-                top: Math.round((spots[pos] / 100) * window.innerHeight),
-                behavior: 'smooth'
-            })
+            scrollToPos();
 
             return false;
         }
+    }
+
+    samePage = { 1: 1, 3: 1, 4: 1 }
+    function scrollToSetPos(tempPos) {
+        if (samePage[tempPos]) {
+            pos = tempPos;
+            scrollToPos();
+        }
+
+
     }
 
     //window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
