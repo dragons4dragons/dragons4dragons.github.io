@@ -5,17 +5,17 @@
     <title>Dragons4Dragons</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="root">
         <div class="header headerTap" id="header">
             <h1 class="headerTap" onclick="scrollToSetPos(1)">about</h1>
-            <h1 class="headerTap">pics</h1>
+            <h1 class="headerTap" onclick="redirect('/pics')">pics</h1>
             <h1 class="headerTap">members</h1>
-            <h1 class="headerTap" onclick="scrollToSetPos(2)">sponsors</h1>
-            <h1 class="headerTap" onclick="redirect('https://www.facebook.com/profile.php?id=100054368898660')">donate!</h1>
-
+            <h1 class="headerTap" onclick="scrollToSetPos(2)">support!</h1>
+            <h1 class="headerTap" onclick="scrollToSetPos(3)">sponsors</h1>
         </div>
         <div id="bg">
             <div class="blur">
@@ -46,11 +46,36 @@
             <div class="blur2">
             </div>
         </div>
+        <div class="cover" id="cover2">
+            <div class="title t">
+                <h1 class="h1">PRODUCTS</h1>
+            </div>
+            <div class="desc b p" id="desc1">
+                <a href="https://www.etsy.com/listing/982790168/dragons-4-dragons-mens-short-sleeved-100?ref=listing_published_alert&variation0=1921849126&fbclid=IwAR0XCrR06Qv1qL9VF1NJNYFy1uU-Nb_Hxy83vDN1MTK3p_q3oH2BZH89C8Y"
+                    target="_blank">
+                    <img src="img/shirt.png">
+                </a>
+                <div class="textR">
+                    <p>We're fashionably helping the community one t-shirt at a time!<br><br>Click the shirt to help
+                        fund
+                        a
+                        scholarship!<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="bg3">
+            <div class="blur3">
+            </div>
+        </div>
         <div id="sponsors" class="cover">
             <div class="title t">
                 <h1 class="h1">SPONSORS</h1>
+
             </div>
+            <p class="p">If you'd like to be sponsor, please contact us! </p>
             <div class="bsponsors fill" id="desc1">
+
                 <div class="link">
                     <a href="https://www.gigglesandgrins.org/" target="_blank">
                         <img src="img/sponsors/gng.png">
@@ -114,284 +139,6 @@
 </body>
 
 </html>
-
-<style>
-    html {
-        overflow-x: hidden;
-    }
-
-    body {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        left: 0;
-    }
-
-    .link {
-        width: 15vw;
-        min-width: 200px;
-        height: min-content;
-        margin: 20px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
-
-    .link p {
-        width: auto;
-    }
-
-    .link img {
-        width: 100%;
-        height: auto;
-    }
-
-    .fill {
-        display: flex;
-        justify-content: center;
-        height: fit-content;
-        margin: auto;
-        flex-wrap: wrap;
-        padding-top: 3vh;
-        text-align: center;
-        width: auto;
-        max-width: 80vw;
-    }
-
-    .header {
-        position: fixed;
-        display: none;
-        width: 98%;
-        height: 75px;
-        margin: 0;
-        left: 0;
-        top: 0;
-        background-color: white;
-        justify-content: flex-end;
-        z-index: 1;
-        padding-right: 2%;
-    }
-
-    #flag {
-        position: absolute;
-        margin-top: 75px;
-        text-align: center;
-        font-family: 'Roboto', sans-serif;
-        padding: 10px 0;
-        background-color: rgb(241, 226, 12);
-        width: 100%;
-    }
-
-    .flagSlide {
-        animation: openDown 1s;
-    }
-
-    .header h1 {
-        margin: auto 1%;
-        max-width: min-content;
-    }
-
-    .header h1:hover {
-        cursor: pointer;
-    }
-
-    #bg {
-        display: block;
-        overflow-x: hidden;
-        width: 105vw;
-        transform: translate(0, 0);
-        z-index: -1;
-        height: 105vh;
-        background-image: url("img/school.jpg");
-        background-attachment: fixed;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        filter: saturate(150%)
-    }
-
-    .blur {
-        width: 100%;
-        height: 100%;
-        background-image: url("img/school.jpg");
-        background-attachment: fixed;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        filter: saturate(150%) blur(10px);
-    }
-
-    #bg2 {
-        position: relative;
-        margin-top: 0;
-        overflow-x: hidden;
-        width: 105vw;
-        transform: translate(0, -7.5vh);
-        z-index: -10;
-        height: 80vh;
-        background-image: url("img/school2.jpg");
-        background-attachment: fixed;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: top;
-        filter: saturate(150%);
-    }
-
-    .blur2 {
-        width: 100%;
-        height: 100%;
-        background-image: url("img/school2.jpg");
-        background-attachment: fixed;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        filter: saturate(150%) blur(10px);
-    }
-
-    #sponsors {
-        background-color: white;
-        display: block;
-    }
-
-    .slideDown {
-        opacity: 1;
-        animation: slideDown 1s;
-    }
-
-    .slideUp {
-        animation: slideUp 1s;
-        transform: translateY(-100%);
-    }
-
-    @keyframes slideDown {
-        0% {
-            transform: translateY(-100%);
-        }
-
-        100% {
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes slideUp {
-        0% {
-            transform: translateY(0);
-        }
-
-        100% {
-            transform: translateY(-100%);
-        }
-    }
-
-    #back {
-        position: absolute;
-        display: flex;
-        width: 100vw;
-        height: 105vh;
-        left: 0;
-        top: 0;
-        margin: 0;
-    }
-
-    #content {
-        display: block;
-        position: relative;
-        margin: auto;
-        font-family: 'Roboto', sans-serif;
-        width: min-content;
-        font-size: 40px;
-        font-weight: bold;
-        word-spacing: 10px;
-        height: min-content;
-        background-image: linear-gradient();
-        color: white;
-        /* background-color: rgb(80, 80, 80); */
-        text-align: center;
-        padding: 30px;
-        border: 10px white solid;
-    }
-
-    .root {
-        width: 100vw;
-        left: 0;
-        top: 0;
-        margin: 0;
-        background-color: transparent;
-        position: absolute;
-    }
-
-    .cover {
-        height: min-content;
-        background-color: white;
-        font-family: 'Roboto', sans-serif;
-        display: block;
-        width: 100vw;
-        margin: auto;
-        padding: 50px 0;
-    }
-
-    .t {
-        margin: auto;
-        text-align: center;
-        width: min-content;
-        border-bottom: black 3px solid;
-        overflow: hidden;
-    }
-
-    .t h1 {
-        margin: 0 auto;
-        padding: 0vh 50px 3vh;
-        animation: openUp 2s;
-    }
-
-    .b {
-        margin: 0 auto auto;
-        padding-top: 3vh;
-        text-align: center;
-        width: auto;
-        max-width: 700px;
-        overflow: hidden;
-    }
-
-    .b p {
-        animation: openDown 2s;
-    }
-
-    @keyframes expands {
-        0% {
-            height: 0;
-            opacity: 0;
-        }
-
-        100% {
-            height: 30%;
-            opacity: 1;
-        }
-    }
-
-    @keyframes openDown {
-        0% {
-            transform: translateY(-150%);
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes openUp {
-        0% {
-            transform: translateY(150%);
-            opacity: 0;
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-</style>
 
 <script>
 
@@ -487,7 +234,10 @@
 
 
     //positions
-    var spots = [0, document.getElementById("cover1"), document.getElementById("sponsors")];
+    var spots = [0, document.getElementById("cover1"), document.getElementById("cover2"), document.getElementById("sponsors")];
+
+
+
     var hash = ['home', 'about', 'sponsors'];
 
     timeout = ''
@@ -500,9 +250,9 @@
                 behavior: 'smooth'
             })
         } else {
-            var height = (innerHeight - spots[pos].style.height) / 2;
+            var height = (innerHeight - spots[pos].offsetHeight) / 2;
             window.scrollTo({
-                top: spots[pos].offsetTop - height / 2,
+                top: spots[pos].offsetTop - height,
                 behavior: 'smooth'
             })
         }
@@ -644,7 +394,7 @@
             }
             titles = document.getElementsByClassName("p")
             for (var i = 0; i < titles.length; i++) {
-                titles[i].style.fontSize = "5vw"
+                titles[i].style.fontSize = "4.25vw"
             }
             titles = document.getElementsByClassName("link")
             for (var i = 0; i < titles.length; i++) {
@@ -654,6 +404,9 @@
 
             document.getElementById("cover1").style.width = "105vw";
             document.getElementById("cover1").style.padding = "10vw 0";
+
+            document.getElementById("cover2").style.width = "105vw";
+            document.getElementById("cover2").style.padding = "10vw 0";
             document.getElementById("desc1").style.maxWidth = "80vw";
             return;
         }
@@ -678,7 +431,7 @@
         }
         titles = document.getElementsByClassName("p")
         for (var i = 0; i < titles.length; i++) {
-            titles[i].style.fontSize = "28px"
+            titles[i].style.fontSize = "22px"
         }
         titles = document.getElementsByClassName("link")
         for (var i = 0; i < titles.length; i++) {
@@ -687,6 +440,9 @@
 
         document.getElementById("cover1").style.width = "100vw";
         document.getElementById("cover1").style.padding = "75px 0";
+
+        document.getElementById("cover2").style.width = "100vw";
+        document.getElementById("cover2").style.padding = "75px 0";
         document.getElementById("desc1").style.maxWidth = "750px";
 
     }
@@ -727,7 +483,7 @@
         }
     }
 
-    samePage = { 1: 1, 2: 1, 4: 1 }
+    samePage = { 1: 1, 2: 1, 4: 1, 3: 1 }
     function scrollToSetPos(tempPos) {
         if (samePage[tempPos]) {
             pos = tempPos;
@@ -742,6 +498,6 @@
 
 
     function redirect(url) {
-        window.open(url);
+        window.location.replace(url);
     }
 </script>

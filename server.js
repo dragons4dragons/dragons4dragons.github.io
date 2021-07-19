@@ -1,7 +1,7 @@
 const express = require('express');
 const app = new express();
 
-var location = 'new';
+var location = 'docs';
 
 app.get('/', function(request, response){
     response.sendFile(__dirname + '/' + location + '/index.html');

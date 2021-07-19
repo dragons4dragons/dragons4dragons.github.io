@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dragons4Dragons</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="../index.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <body>
+        <div class="root">
+            <div class="header headerTap" id="header">
+                <h1 class="headerTap" onclick="redirect('/')">about</h1>
+                <h1 class="headerTap" onclick="redirect('/pics')">pics</h1>
+                <h1 class="headerTap">members</h1>
+                <h1 class="headerTap" onclick="scrollToSetPos(2)">support!</h1>
+                <h1 class="headerTap" onclick="scrollToSetPos(3)">sponsors</h1>
+            </div>
+
+
+            <div class="imgs">
+
+            </div>
+        </div>
+    </body>
+
+
+</html>
+
+
+<script>
+    function redirect(url) {
+        window.location.replace(url);
+    }
+
+    document.getElementById("header").style.display = "flex";
+
+    function mobile() {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            isMobile = true;
+            //console.log(navigator.userAgent);
+            document.getElementById("header").style.height = "10vh";
+            document.getElementById("header").style.fontSize = 'larger';
+
+            var titles = document.getElementsByClassName("h1")
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].style.fontSize = "10vw"
+            }
+            titles = document.getElementsByClassName("p")
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].style.fontSize = "4.25vw"
+            }
+            titles = document.getElementsByClassName("link")
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].style.width = "35vw";
+            }
+            return;
+        }
+        else if (window.innerHeight > window.innerWidth) {
+            isMobile = false;
+            document.getElementById("header").style.fontSize = '60%';
+        }
+        else {
+            isMobile = false;
+            document.getElementById("header").style.fontSize = '60%';
+        }
+
+        var titles = document.getElementsByClassName("h1")
+        for (var i = 0; i < titles.length; i++) {
+            titles[i].style.fontSize = "45px"
+        }
+        titles = document.getElementsByClassName("p")
+        for (var i = 0; i < titles.length; i++) {
+            titles[i].style.fontSize = "22px"
+        }
+        titles = document.getElementsByClassName("link")
+        for (var i = 0; i < titles.length; i++) {
+            titles[i].style.width = "15vw";
+        }
+
+    }
+
+    mobile();
+
+    var isMobile = false;
+    var toggle = true;
+
+    var mouseY = 0;
+    function check() {
+
+        mobile();
+
+        if (isMobile) {
+            return;
+        }
+
+        if (mouseY < 80) {
+            toggle = true;
+            document.getElementById("header").classList.remove("slideUp");
+            document.getElementById("header").style.display = "inline-flex";
+            document.getElementById("header").classList.add("slideDown");
+        } else {
+            toggle = false;
+            document.getElementById("header").classList.remove("slideDown");
+            document.getElementById("header").classList.add("slideUp");
+        }
+    }
+
+    document.onmousemove = (e) => {
+        mouseY = e.clientY;
+        check();
+    }
+</script>

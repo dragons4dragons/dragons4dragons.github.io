@@ -1,0 +1,351 @@
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.link {
+  width: 15vw;
+  min-width: 200px;
+  height: min-content;
+  margin: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.link p {
+  width: auto;
+}
+
+.link img {
+  width: 100%;
+  height: auto;
+}
+
+.fill {
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  margin: auto;
+  flex-wrap: wrap;
+  padding-top: 3vh;
+  text-align: center;
+  width: auto;
+  max-width: 80vw;
+}
+
+.header {
+  position: fixed;
+  display: none;
+  width: 98%;
+  height: 75px;
+  margin: 0;
+  left: 0;
+  top: 0;
+  background-color: white;
+  justify-content: flex-end;
+  z-index: 1;
+  padding-right: 2%;
+}
+
+#flag {
+  position: absolute;
+  margin-top: 75px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  padding: 10px 0;
+  background-color: rgb(241, 226, 12);
+  width: 100%;
+}
+
+.flagSlide {
+  animation: openDown 1s;
+}
+
+.header h1 {
+  margin: auto 1%;
+  max-width: min-content;
+}
+
+.header h1:hover {
+  cursor: pointer;
+}
+
+#bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  width: 105vw;
+  transform: translate(0, 0);
+  z-index: -1;
+  height: 105vh;
+  background-image: url('img/school.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  filter: saturate(150%);
+}
+
+.blur {
+  width: 110%;
+  height: 110%;
+  background-image: url('img/school.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  filter: saturate(150%) blur(10px);
+}
+
+#bg2 {
+  position: relative;
+  margin-top: 0;
+  overflow-x: hidden;
+  width: 105vw;
+  z-index: -10;
+  height: 80vh;
+  background-image: url('img/school2.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  filter: saturate(150%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blur2 {
+  width: 110%;
+  height: 110%;
+  background-image: url('img/school2.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  filter: saturate(150%) blur(10px);
+}
+
+#bg3 {
+  position: relative;
+  margin-top: 0;
+  overflow-x: hidden;
+  width: 105vw;
+  z-index: -10;
+  height: 80vh;
+  background-image: url('img/school3.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blur3 {
+  width: 110vw;
+  height: 110%;
+  background-image: url('img/school3.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  filter: blur(10px);
+}
+
+#sponsors {
+  background-color: white;
+  display: block;
+}
+
+.slideDown {
+  opacity: 1;
+  animation: slideDown 1s;
+}
+
+.slideUp {
+  animation: slideUp 1s;
+  transform: translateY(-100%);
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+#back {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  height: 105vh;
+  left: 0;
+  top: 0;
+  margin: 0;
+}
+
+#content {
+  display: block;
+  position: relative;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  width: min-content;
+  font-size: 10px;
+  font-weight: bold;
+  word-spacing: 10px;
+  height: min-content;
+  background-image: linear-gradient();
+  color: white;
+  /* background-color: rgb(80, 80, 80); */
+  text-align: center;
+  padding: 30px;
+  border: 10px white solid;
+}
+
+.root {
+  width: 100vw;
+  left: 0;
+  top: 0;
+  margin: 0;
+  background-color: transparent;
+  position: absolute;
+}
+
+.cover {
+  height: min-content;
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  display: block;
+  width: 100vw;
+  margin: auto;
+  padding: 50px 0;
+}
+
+.t {
+  margin: auto;
+  text-align: center;
+  width: min-content;
+  border-bottom: black 3px solid;
+  overflow: hidden;
+}
+
+.t h1 {
+  margin: 0 auto;
+  padding: 0vh 50px 3vh;
+  animation: openUp 2s;
+}
+
+.b {
+  margin: 0 auto auto;
+  padding-top: 3vh;
+  text-align: center;
+  width: auto;
+  height: 100%;
+  max-width: 700px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 3;
+}
+
+.b img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  animation: openDown 2s;
+  border-radius: 10px;
+}
+
+.b a {
+  width: 50%;
+}
+
+.b img:hover {
+  cursor: pointer;
+  filter: brightness(0.7);
+}
+
+.b p {
+  animation: openDown 2s;
+}
+
+@keyframes expands {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+
+  100% {
+    height: 30%;
+    opacity: 1;
+  }
+}
+
+@keyframes openDown {
+  0% {
+    transform: translateY(-150%);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes openUp {
+  0% {
+    transform: translateY(150%);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.textR {
+  width: 50%;
+}
+
+.textR p {
+  width: auto;
+  height: auto;
+}
+
+.cover p {
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+}
+
+.imgs {
+  width: 100vw;
+  min-height: 100vh;
+  height: max-content;
+  background-color: rgb(8, 139, 8);
+}
