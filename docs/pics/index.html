@@ -13,17 +13,23 @@
     <body>
         <div class="root">
             <div class="header headerTap" id="header">
-                <h1 class="headerTap" onclick="redirect('/')">about</h1>
-                <h1 class="headerTap" onclick="redirect('/pics')">pics</h1>
-                <h1 class="headerTap">members</h1>
-                <h1 class="headerTap" onclick="scrollToSetPos(2)">support!</h1>
-                <h1 class="headerTap" onclick="scrollToSetPos(3)">sponsors</h1>
+                <div class="start-div">
+                    <a href="https://www.facebook.com/people/Dragons-4-Dragons/100054368898660/" target="_blank"><img src="../img/facebook.png" /></a>
+                </div>
+                <div class="end-div">
+                    <h1 class="headerTap" onclick="redirect('/#about')">about</h1>
+                    <h1 class="headerTap" onclick="redirect('/#members')">members</h1>
+                    <h1 class="headerTap" onclick="redirect('/#support')">support!</h1>
+                    <h1 class="headerTap" onclick="redirect('/pics')">pics</h1>
+                    <h1 class="headerTap" onclick="redirect('/#sponsors')">sponsors</h1>
+                </div>
+
             </div>
 
 
-            <div class="imgs">
+            <ul class="imgs" id="images">
 
-            </div>
+            </ul>
         </div>
     </body>
 
@@ -32,6 +38,19 @@
 
 
 <script>
+
+    var list = document.getElementById("images");
+
+    var imageCount = 14;
+
+    for (var i = 1; i <= imageCount; i++) {
+        var li = document.createElement("li");
+        var img = document.createElement("img");
+        img.src = "./imgs/" + i + ".jpg";
+        li.appendChild(img)
+        list.appendChild(li);
+    }
+
     function redirect(url) {
         window.location.replace(url);
     }
@@ -113,4 +132,18 @@
         mouseY = e.clientY;
         check();
     }
+
+    function remove_hash_from_url() {
+        var uri = window.location.toString();
+
+        if (uri.indexOf("#") > 0) {
+            var clean_uri = uri.substring(0,
+                uri.indexOf("#"));
+
+            window.history.replaceState({},
+                document.title, clean_uri);
+        }
+    }
+
+    remove_hash_from_url()
 </script>
