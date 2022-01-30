@@ -8,30 +8,37 @@
     <link href="../index.css" rel="stylesheet">
 </head>
 
+
+
 <body>
-
-    <body>
-        <div class="root">
-            <div class="header headerTap" id="header">
-                <div class="start-div">
-                    <a href="https://www.facebook.com/people/Dragons-4-Dragons/100054368898660/" target="_blank"><img src="../img/facebook.png" /></a>
-                </div>
-                <div class="end-div">
-                    <h1 class="headerTap" onclick="redirect('/#about')">about</h1>
-                    <h1 class="headerTap" onclick="redirect('/#members')">members</h1>
-                    <h1 class="headerTap" onclick="redirect('/#support')">support!</h1>
-                    <h1 class="headerTap" onclick="redirect('/pics')">pics</h1>
-                    <h1 class="headerTap" onclick="redirect('/#sponsors')">sponsors</h1>
-                </div>
-
+    <div class="root">
+        <div class="header headerTap" id="header">
+            <div class="start-div">
+                <a href="https://www.facebook.com/people/Dragons-4-Dragons/100054368898660/" target="_blank"><img
+                        src="../img/facebook.png" /></a>
+            </div>
+            <div class="end-div">
+                <h1 class="headerTap" onclick="redirect('/#about')">about</h1>
+                <h1 class="headerTap" onclick="redirect('/#members')">members</h1>
+                <h1 class="headerTap" onclick="redirect('/#support')">support!</h1>
+                <h1 class="headerTap" onclick="redirect('/pics')">pics</h1>
+                <h1 class="headerTap" onclick="redirect('/#sponsors')">sponsors</h1>
             </div>
 
-
-            <ul class="imgs" id="images">
-
-            </ul>
         </div>
-    </body>
+
+        <div class="overlay" id="overlay">
+            <div class="preview">
+                <img id="prev" />
+            </div>
+
+        </div>
+
+        <ul class="imgs" id="images">
+
+        </ul>
+    </div>
+</body>
 
 
 </html>
@@ -40,12 +47,55 @@
 <script>
 
     var list = document.getElementById("images");
+    var prev = document.getElementById("prev");
+    var overlay = document.getElementById("overlay");
 
     var imageCount = 14;
+
+    var on = false;
+
+    function onOut(e) {
+        if (!on) {
+            prev.classList.add("in");
+            prev.src = "./imgs/" + e.target.id + ".jpg";
+            overlay.style.display = "flex"
+            on = true;
+        } else {
+            prev.classList.add("out");
+            prev.classList.remove("in");
+            setTimeout(function () {
+                prev.src = "./imgs/" + e.target.id + ".jpg";
+                overlay.style.display = "flex"
+                prev.classList.remove("out");
+                prev.classList.add("in");
+            }, 500)
+        }
+
+    }
+
+    overlay.onclick = function (e) {
+        if (e.target.id != "prev") {
+            overlay.style.display = "none"
+            on = false;
+        }
+    }
+
+    list.onclick = function (e) {
+        if (e.target.className.indexOf("showImage") < 0) {
+            overlay.style.display = "none"
+            on = false;
+        }
+    }
+
 
     for (var i = 1; i <= imageCount; i++) {
         var li = document.createElement("li");
         var img = document.createElement("img");
+        img.id = i;
+        img.className = "showImage"
+        img.onclick = function (e) {
+            onOut(e)
+        };
         img.src = "./imgs/" + i + ".jpg";
         li.appendChild(img)
         list.appendChild(li);
