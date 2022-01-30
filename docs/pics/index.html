@@ -75,17 +75,26 @@
 
     overlay.onclick = function (e) {
         if (e.target.id != "prev") {
-            overlay.style.display = "none"
+            prev.classList.add("out");
+            prev.classList.remove("in");
+            overlay.classList.add("overlayOut");
+            
             on = false;
+            setTimeout(function () {
+                overlay.classList.remove("overlayOut");
+                prev.classList.remove("out");
+                overlay.style.display = "none"
+
+            }, 500)
         }
     }
 
-    list.onclick = function (e) {
-        if (e.target.className.indexOf("showImage") < 0) {
-            overlay.style.display = "none"
-            on = false;
-        }
-    }
+    // list.onclick = function (e) {
+    //     if (e.target.className.indexOf("showImage") < 0) {
+    //         overlay.style.display = "none"
+    //         on = false;
+    //     }
+    // }
 
 
     for (var i = 1; i <= imageCount; i++) {

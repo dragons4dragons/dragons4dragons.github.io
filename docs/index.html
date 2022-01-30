@@ -12,7 +12,8 @@
     <div class="root">
         <div class="header headerTap" id="header">
             <div class="start-div">
-                <a href="https://www.facebook.com/people/Dragons-4-Dragons/100054368898660/" target="_blank"><img src="img/facebook.png" /></a>
+                <a href="https://www.facebook.com/people/Dragons-4-Dragons/100054368898660/" target="_blank"><img
+                        src="img/facebook.png" /></a>
             </div>
             <div class="end-div">
                 <h1 class="headerTap" onclick="scrollToSetPos(1)">about</h1>
@@ -48,9 +49,11 @@
                     the
                     true meaning of being a Southlake Carroll Dragon.</p>
 
-                    
+
             </div>
-            <p>Contact: <a href="mailto:bbelleville375@southlakecarroll.edu" target="_blank">bbelleville375@southlakecarroll.edu</a></p>
+            <br />
+            <p class="rawr">Contact: <a href="mailto:bbelleville375@southlakecarroll.edu"
+                    target="_blank">bbelleville375@southlakecarroll.edu</a></p>
         </div>
         <div id="bg2">
             <div class="blur2">
@@ -85,8 +88,11 @@
                     </p>
                 </div>
             </div>
-            <p>
-                For questions about the $250 scholarship, please email <a href="mailto:bbelleville375@southlakecarroll.edu" target="_blank">bbelleville375@southlakecarroll.edu</a>
+            <br />
+            <p class="rawr">
+                For questions about the $250 scholarship, please email <a
+                    href="mailto:bbelleville375@southlakecarroll.edu"
+                    target="_blank">bbelleville375@southlakecarroll.edu</a>
             </p>
         </div>
         <div id="bg3">
@@ -425,6 +431,10 @@
             for (var i = 0; i < titles.length; i++) {
                 titles[i].style.width = "35vw";
             }
+            titles = document.getElementsByClassName("rawr")
+            for (var i = 0; i < titles.length; i++) {
+                titles[i].style.fontSize = "200%"
+            }
             document.getElementById("sponsors").style.width = "105vw";
 
             document.getElementById("cover1").style.width = "105vw";
@@ -461,6 +471,10 @@
         titles = document.getElementsByClassName("link")
         for (var i = 0; i < titles.length; i++) {
             titles[i].style.width = "15vw";
+        }
+        titles = document.getElementsByClassName("rawr")
+        for (var i = 0; i < titles.length; i++) {
+            titles[i].style.fontSize = "110%"
         }
 
         document.getElementById("cover1").style.width = "100vw";

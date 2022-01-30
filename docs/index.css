@@ -452,7 +452,36 @@ li {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.336);
-  pointer-events: none;
+  /* pointer-events: none; */
+  animation: fadeIn 0.5s;
+  cursor: pointer;
+}
+
+.overlayOut {
+  animation: fadeOut 0.5s;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.336);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    background-color: rgba(0, 0, 0, 0.336);
+    opacity: 1;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 1;
+  }
 }
 
 .preview {
@@ -475,6 +504,7 @@ li {
   max-width: 100%;
   object-fit: contain;
   pointer-events: all !important;
+  cursor: default;
 }
 
 .imgs img:hover {
@@ -560,4 +590,9 @@ li {
     max-height: 75vh;
     min-width: 0;
   }
+}
+
+.rawr {
+  font-size: 200%;
+  margin-top: 1% !important;
 }
