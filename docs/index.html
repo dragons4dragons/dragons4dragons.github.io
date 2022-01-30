@@ -620,6 +620,11 @@
     var changeScroll = 400;
 
     scrollL.onclick = function () {
+        if (isMobile) {
+            changeScroll = 400;
+        } else {
+            changeScroll = 10000;
+        }
         scrollR.classList.remove("scrollOut");
         var scrollPosTemp = desc4.scrollLeft - changeScroll;
         desc4.scrollTo({
@@ -632,6 +637,11 @@
     }
 
     scrollR.onclick = function () {
+        if (isMobile) {
+            changeScroll = 400;
+        } else {
+            changeScroll = 10000;
+        }
         scrollL.classList.remove("scrollOut");
         var scrollPosTemp = desc4.scrollLeft + changeScroll;
         desc4.scrollTo({
