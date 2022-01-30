@@ -63,8 +63,57 @@
             <div class="title t">
                 <h1 class="h1">MEMBERS</h1>
             </div>
-            <div class="desc b p" id="desc4">
-                <p></p>
+            <div class="desc2 p" id="desc4">
+
+                <div class="scroller">
+                    <img id="scrollL" class="scrollOut" src="./img/left.png" />
+                    <img id="scrollR" src="./img/right.png" />
+                </div>
+
+                <div class="card">
+                    <img src="./img/members/brett.jfif">
+                    <h1>Brett Belleville</h1>
+                    <p>Founder/CEO
+                        I am a high school senior at CISD interested in STEM and hope to attend either the Air Force or
+                        Navel Academy. This year I did varsity football, worked as a lifeguard, and I am a Boy Scout.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <img src="./img/members/michael.jfif">
+                    <h1>Michael Ubis</h1>
+                    <p>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <img src="./img/members/rachel.jfif">
+                    <h1>Rachel Moon</h1>
+                    <p>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <img src="./img/members/bryant.jfif">
+                    <h1>Bryant Hargreaves</h1>
+                    <p>
+                    </p>
+                </div>
+
+                <div class="card">
+                    <img src="./img/members/cade.jfif">
+                    <h1>Cade Parks</h1>
+                    <p>Chief Marketing Officer
+
+                        Hello my name is Cade Parks and I am a Junior at CISD and have aspirations to one day attend the
+                        Naval Academy. This year I participated in varsity football as a starter and volunteered for
+                        SASO.
+                    </p>
+                </div>
+
+
+
+
             </div>
         </div>
         <div id="bg4">
@@ -563,4 +612,35 @@
     }
 
     remove_hash_from_url()
+
+    var desc4 = document.getElementById("desc4");
+    var scrollL = document.getElementById("scrollL");
+    var scrollR = document.getElementById("scrollR");
+
+    var changeScroll = 400;
+
+    scrollL.onclick = function () {
+        scrollR.classList.remove("scrollOut");
+        var scrollPosTemp = desc4.scrollLeft - changeScroll;
+        desc4.scrollTo({
+            left: scrollPosTemp,
+            behavior: 'smooth'
+        });
+        if (scrollPosTemp <= 0) {
+            scrollL.classList.add("scrollOut");
+        }
+    }
+
+    scrollR.onclick = function () {
+        scrollL.classList.remove("scrollOut");
+        var scrollPosTemp = desc4.scrollLeft + changeScroll;
+        desc4.scrollTo({
+            left: scrollPosTemp,
+            behavior: 'smooth'
+        });
+        console.log(desc4.scrollWidth)
+        if (scrollPosTemp >= desc4.scrollWidth - desc4.clientWidth) {
+            scrollR.classList.add("scrollOut");
+        }
+    }
 </script>

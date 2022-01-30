@@ -49,7 +49,7 @@ body {
   top: 0;
   background-color: white;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 100;
   padding-right: 2%;
 }
 
@@ -595,4 +595,81 @@ li {
 .rawr {
   font-size: 200%;
   margin-top: 1% !important;
+}
+
+.card {
+  width: auto;
+  border-radius: 20px;
+  -webkit-box-shadow: rgb(0, 0, 0) 0px 10px 13px -7px,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: rgb(0 0 0 / 43%) 0px 6px 13px -2px,
+    5px 5px 15px 5px rgb(0 0 0 / 0%);
+  height: 80%;
+  width: auto;
+  margin: 1%;
+  padding: 2.5%;
+  animation: openDown 2s;
+}
+
+.desc2::-webkit-scrollbar {
+  display: none !important;
+  opacity: 0;
+  width: 0;
+}
+
+.card h1 {
+  animation: none 2s;
+  font-size: 120%;
+}
+
+.card p {
+  animation: none 2s;
+  font-size: 80%;
+  /* width: fit-content; */
+  width: 20rem;
+}
+
+.card img {
+  animation: none 2s;
+  object-fit: cover;
+  height: 20rem;
+  width: 20rem;
+  border-radius: 10px;
+}
+
+.desc2 {
+  margin: 0 auto auto;
+  padding-top: 3vh;
+  text-align: center;
+  width: auto;
+  height: 100%;
+  overflow-x: auto;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-grow: 3;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.scroller {
+  position: absolute;
+  width: 97vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s;
+}
+
+.scroller img {
+  height: 5rem;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.scrollOut {
+  opacity: 0;
+  transition: all 1s;
+  pointer-events: none;
 }
