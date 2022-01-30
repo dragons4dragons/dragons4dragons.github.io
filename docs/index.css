@@ -51,6 +51,9 @@ body {
   justify-content: space-between;
   z-index: 100;
   padding-right: 2%;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.123) 0px 10px 13px -7px,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.123) 0px 10px 13px -7px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 #flag {
