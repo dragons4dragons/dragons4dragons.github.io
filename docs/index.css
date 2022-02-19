@@ -607,10 +607,9 @@ li {
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: rgb(0 0 0 / 43%) 0px 6px 13px -2px,
     5px 5px 15px 5px rgb(0 0 0 / 0%);
-  height: 80%;
-  width: auto;
+  height: 100%;
   margin: 1%;
-  padding: 2.5%;
+  padding: 2.5rem;
   animation: openDown 2s;
 }
 
@@ -627,17 +626,21 @@ li {
 
 .card p {
   animation: none 2s;
-  font-size: 80%;
+  font-size: 60%;
   /* width: fit-content; */
-  width: 20rem;
+  width: 15rem;
 }
 
 .card img {
   animation: none 2s;
   object-fit: cover;
-  height: 20rem;
-  width: 20rem;
+  height: 15rem;
+  width: 15rem;
   border-radius: 10px;
+}
+
+.obj-top img {
+  object-position: top;
 }
 
 .desc2 {
