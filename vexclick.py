@@ -17,15 +17,16 @@ def reset():
     global cancel
 
     pos = pyautogui.position()
-    pyautogui.moveTo(800, 850)
-    pyautogui.click(800, 850)
+    pyautogui.moveTo(1149, 683)
+    pyautogui.click(1149, 683)
     pyautogui.moveTo(pos)
        
-    pyautogui.moveTo(800, 800)
-    pyautogui.click(800, 800)
+    pyautogui.moveTo(1149, 629)
+    pyautogui.click(1149, 629)
     pyautogui.moveTo(pos)
     counter = 0
     while counter < 60:
+        print(pyautogui.position())
         if stop is True:
             return
         print(counter)
@@ -40,12 +41,15 @@ def reset():
     
     sleep(2)
     pos = pyautogui.position()
-    pyautogui.click(1321, 792)
-    sleep(1)
-    pyautogui.click(1506, 785)
+    pyautogui.click(1448, 628)
     sleep(0.1)
-    pyautogui.click(1506, 785)
+    pyautogui.click(1448, 628)
+    sleep(1)
+    pyautogui.click(1596, 628)
+    sleep(0.1)
+    pyautogui.click(1596, 628)
     sleep(2)
+    pyautogui.moveTo(pos)
     reset()
 
 
