@@ -290,6 +290,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-grow: 3;
+  object-fit: contain;
 }
 
 .c {
