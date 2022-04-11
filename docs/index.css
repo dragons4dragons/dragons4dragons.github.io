@@ -291,6 +291,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-grow: 3;
+  object-fit: contain;
 }
 
 .c {
@@ -309,7 +310,7 @@ body {
 }
 
 .b img {
-  width: 100%;
+  width: auto;
   height: auto;
   max-height: 400px;
   animation: openDown 2s;
