@@ -80,20 +80,21 @@ body {
 }
 
 #bg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  margin-top: 0;
   overflow-x: hidden;
   width: 105vw;
-  transform: translate(0, 0);
-  z-index: -1;
+  z-index: -10;
   height: 105vh;
   background-image: url('img/school.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: top;
   filter: saturate(150%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .blur {
@@ -439,6 +440,7 @@ body {
   object-fit: cover;
   vertical-align: bottom;
   border-radius: 1vmin;
+  max-width: 100%;
 }
 
 li {
